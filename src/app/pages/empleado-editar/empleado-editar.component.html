@@ -1,1 +1,7 @@
-<p>empleado-editar works!</p>
+<div class="row">
+  <div class="col">
+    <h2>Editar empleado {{ dto.nombre_completo }}</h2>
+  </div>
+</div>
+
+<app-form-editar-empleado [dto]="dto" (submit)="onSubmit($event)"></app-form-editar-empleado>

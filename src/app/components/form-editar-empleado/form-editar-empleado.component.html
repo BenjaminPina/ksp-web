@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col col-8">
+    <div class="card">
+      <div class="card-body">
+        <form #empleadoForm="ngForm" (submit)="onSubmit()">
+          <fieldset>
+            <div class="form-group">
+
+              <label for="nombre_completo">Nombre completo:</label>
+              <input type="text" class="form-control mb-2" name="nombre_completo" id="nombre_completo"
+                #nombre_completo="ngModel" [(ngModel)]="dto.nombre_completo" required>
+
+                <label for="puesto_trabajo">Puesto de trabajo:</label>
+                <input type="text" class="form-control mb-2" name="puesto_trabajo" id="puesto_trabajo"
+                  #puesto_trabajo="ngModel" [(ngModel)]="dto.puesto_trabajo" required>
+
+                <label for="salario">Salario:</label>
+                <input type="number" class="form-control mb-2" name="salario" id="salario"
+                  #salario="ngModel" [(ngModel)]="dto.salario" required>
+
+                <label for="fecha_contratacion">Fecha de contratación:</label>
+                <input class="form-control" [(ngModel)]="dto.fecha_contratacion" [dpDayPicker]="config" theme="dp-material" name="fecha_contratacion">
+
+            </div>
+          </fieldset>
+          <button class="btn btn-primary mt-2" type="submit" [disabled]="!empleadoForm.form.valid">
+            Guardar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
