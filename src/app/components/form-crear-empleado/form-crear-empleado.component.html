@@ -1,1 +1,42 @@
-<p>form-crear-empleado works!</p>
+<div class="row">
+  <div class="col col-8">
+    <div class="card">
+      <div class="card-body">
+        <form #empleadoForm="ngForm" (submit)="onSubmit()">
+          <fieldset>
+            <div class="form-group">
+
+              <label for="nombre_completo">Nombre completo:</label>
+              <input type="text" class="form-control mb-2" name="nombre_completo" id="nombre_completo"
+                #nombre_completo="ngModel" [(ngModel)]="dto.nombre_completo" required>
+
+                <label for="puesto_trabajo">Puesto de trabajo:</label>
+                <input type="text" class="form-control mb-2" name="puesto_trabajo" id="puesto_trabajo"
+                  #puesto_trabajo="ngModel" [(ngModel)]="dto.puesto_trabajo" required>
+
+                  <label for="salario">Salario:</label>
+                  <input type="number" class="form-control mb-2" name="salario" id="salario"
+                    #salario="ngModel" [(ngModel)]="dto.salario" required>
+
+                  <label for="fecha_contratacion">Fecha de contratación:</label>
+                  <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="fecha_contratacion" id="fecha_contratacion"
+                      #fecha_contratacion="ngbDatepicker" [(ngModel)]="dto.fecha_contratacion" ngbDatepicker required>
+                    <button class="btn btn-outline-secondary bi bi-calendar3" (click)="fecha_contratacion.toggle()" type="button">
+                      Seleccionar fecha
+                    </button>
+                  </div>
+
+                  <label for="foto">Foto:</label><br>
+                  <img class="preview-image mb-2" [src]="imageFile ? imageFile.link : 'localhost/image.png'" style="max-width: 50%;">
+                  <input type="file" class="form-control" name="foto" id="foto" (change)="onSelectImage($event)">
+            </div>
+          </fieldset>
+          <button class="btn btn-primary mt-2" type="submit" [disabled]="!empleadoForm.form.valid">
+            Guardar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

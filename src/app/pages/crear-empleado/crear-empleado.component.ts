@@ -13,4 +13,8 @@ export class CrearEmpleadoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(data: FormData): void {
+    console.log(data);
+  }
+
 }
