@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { PagesModule } from './pages/pages.module';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { PagesModule } from './pages/pages.module';
     AppRoutingModule,
     NgbModule,
     PagesModule,
+    ComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
