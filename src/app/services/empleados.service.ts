@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
+import { EmpleadoDto } from '../interfaces/dto/empleadoDto';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +30,11 @@ export class EmpleadosService {
     if (search != '') params.set('search', search);
 
     return this.http.get(`${this.urlApi}/empleados/`, { headers, params });
+  }
+
+  crear(dto: EmpleadoDto): Observable<any> {
+    const headers = this.cabecera();
+
+    return this.http.post(`${this.urlApi}/empleados/`, dto, { headers });
   }
 }

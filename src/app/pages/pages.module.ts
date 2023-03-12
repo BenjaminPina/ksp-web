@@ -9,6 +9,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { CrearEmpleadoComponent } from './crear-empleado/crear-empleado.component';
 import { ComponentsModule } from '../components/components.module';
+import { EmpleadoEditarComponent } from './empleado-editar/empleado-editar.component';
 
 
 
@@ -16,7 +17,8 @@ import { ComponentsModule } from '../components/components.module';
   declarations: [
     HomeComponent,
     NotFoundComponent,
-    CrearEmpleadoComponent
+    CrearEmpleadoComponent,
+    EmpleadoEditarComponent
   ],
   imports: [
     CommonModule,

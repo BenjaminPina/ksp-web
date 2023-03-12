@@ -14,22 +14,13 @@
                 <input type="text" class="form-control mb-2" name="puesto_trabajo" id="puesto_trabajo"
                   #puesto_trabajo="ngModel" [(ngModel)]="dto.puesto_trabajo" required>
 
-                  <label for="salario">Salario:</label>
-                  <input type="number" class="form-control mb-2" name="salario" id="salario"
-                    #salario="ngModel" [(ngModel)]="dto.salario" required>
+                <label for="salario">Salario:</label>
+                <input type="number" class="form-control mb-2" name="salario" id="salario"
+                  #salario="ngModel" [(ngModel)]="dto.salario" required>
 
-                  <label for="fecha_contratacion">Fecha de contratación:</label>
-                  <div class="input-group mb-2">
-                    <input type="text" class="form-control" name="fecha_contratacion" id="fecha_contratacion"
-                      #fecha_contratacion="ngbDatepicker" [(ngModel)]="dto.fecha_contratacion" ngbDatepicker required>
-                    <button class="btn btn-outline-secondary bi bi-calendar3" (click)="fecha_contratacion.toggle()" type="button">
-                      Seleccionar fecha
-                    </button>
-                  </div>
+                <label for="fecha_contratacion">Fecha de contratación:</label>
+                <input class="form-control" [(ngModel)]="dto.fecha_contratacion" [dpDayPicker]="config" theme="dp-material" name="fecha_contratacion">
 
-                  <label for="foto">Foto:</label><br>
-                  <img class="preview-image mb-2" [src]="imageFile ? imageFile.link : 'localhost/image.png'" style="max-width: 50%;">
-                  <input type="file" class="form-control" name="foto" id="foto" (change)="onSelectImage($event)">
             </div>
           </fieldset>
           <button class="btn btn-primary mt-2" type="submit" [disabled]="!empleadoForm.form.valid">
