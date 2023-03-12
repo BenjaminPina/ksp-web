@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  urlApi: 'http://localhost:8000/v1'
+  urlApi: 'http://localhost:8000/v1',
+  pageSize: 10
 };
 
 /*
