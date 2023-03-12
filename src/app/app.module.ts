@@ -7,6 +7,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { PagesModule } from './pages/pages.module';
 import { ComponentsModule } from './components/components.module';
+import { EmpleadosService } from './services/empleados.service';
+import { BeneficiariosService } from './services/beneficiarios.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,10 @@ import { ComponentsModule } from './components/components.module';
     PagesModule,
     ComponentsModule,
   ],
-  providers: [],
+  providers: [
+    EmpleadosService,
+    BeneficiariosService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
