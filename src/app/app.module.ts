@@ -10,6 +10,7 @@ import { PagesModule } from './pages/pages.module';
 import { ComponentsModule } from './components/components.module';
 import { EmpleadosService } from './services/empleados.service';
 import { BeneficiariosService } from './services/beneficiarios.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BeneficiariosService } from './services/beneficiarios.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
     NgbModule,
     PagesModule,
     ComponentsModule,
