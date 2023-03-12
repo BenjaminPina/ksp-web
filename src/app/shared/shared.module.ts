@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MenuComponent } from './menu/menu.component';
+import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    MenuComponent
+  ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    NgbNavModule,
+  ],
+  exports: [
+    MenuComponent,
+  ],
 })
 export class SharedModule { }
