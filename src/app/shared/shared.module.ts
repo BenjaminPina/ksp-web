@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuComponent } from './menu/menu.component';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -11,6 +12,7 @@ import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     CommonModule,
+    RouterModule,
     NgbNavModule,
   ],
   exports: [

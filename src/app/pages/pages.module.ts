@@ -7,13 +7,16 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { CrearEmpleadoComponent } from './crear-empleado/crear-empleado.component';
+import { ComponentsModule } from '../components/components.module';
 
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CrearEmpleadoComponent
   ],
   imports: [
     CommonModule,
@@ -22,6 +25,7 @@ import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
     NgxSpinnerModule,
     NgbModule,
     NgbPaginationModule,
+    ComponentsModule,
   ]
 })
 export class PagesModule { }
