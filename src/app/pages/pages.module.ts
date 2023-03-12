@@ -10,6 +10,7 @@ import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { CrearEmpleadoComponent } from './crear-empleado/crear-empleado.component';
 import { ComponentsModule } from '../components/components.module';
 import { EmpleadoEditarComponent } from './empleado-editar/empleado-editar.component';
+import { EmpleadoDetalleComponent } from './empleado-detalle/empleado-detalle.component';
 
 
 
@@ -18,7 +19,8 @@ import { EmpleadoEditarComponent } from './empleado-editar/empleado-editar.compo
     HomeComponent,
     NotFoundComponent,
     CrearEmpleadoComponent,
-    EmpleadoEditarComponent
+    EmpleadoEditarComponent,
+    EmpleadoDetalleComponent
   ],
   imports: [
     CommonModule,

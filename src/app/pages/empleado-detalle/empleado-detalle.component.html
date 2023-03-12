@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col">
+    <h2>Empleado: {{ empleado.nombre_completo }}</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col col-8">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <strong>Nombre completo:</strong>
+        {{ empleado.nombre_completo }}
+      </li>
+      <li class="list-group-item">
+        <strong>Puesto de trabajo:</strong>
+        {{ empleado.puesto_trabajo }}
+      </li>
+      <li class="list-group-item">
+        <strong>Salario:</strong>
+        ${{ empleado.salario }}
+      </li>
+      <li class="list-group-item">
+        <strong>Fecha de contraración:</strong>
+        {{ empleado.fecha_contratacion }}
+      </li>
+      <li class="list-group-item">
+        <strong>Foto:</strong>
+        <img class="img-thumbnail" src="{{ empleado.foto }}" alt="{{ empleado.nombre_completo }}" *ngIf="empleado.foto">
+      </li>
+    </ul>
+  </div>
+</div>

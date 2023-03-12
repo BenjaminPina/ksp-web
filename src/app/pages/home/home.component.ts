@@ -45,7 +45,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     const subscription = this.empleadosService.lista(page, seach).subscribe(
       resp => {
         this.empleados = resp;
-        console.log(this.empleados);
         this.spinner.hide();
       },
       err => {

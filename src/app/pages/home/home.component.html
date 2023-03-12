@@ -6,7 +6,7 @@
 
 <div class="row mt-2 mb-2">
   <div class="col">
-    <a class="btn btn-success btn-sm" [routerLink]="['/crear']">
+    <a class="btn btn-success btn-sm" [routerLink]="['/empleado/crear']">
       Nuevo empleado
     </a>
   </div>
@@ -30,7 +30,16 @@
           <td>
             {{ empleado.nombre_completo }}
           </td>
-          <td></td>
+          <td>
+            <div class="btn-group" role="group">
+              <a class="btn btn-secondary btn-sm" [routerLink]="['/empleado/detalle/', empleado.id]">
+                Detalle
+              </a>
+              <a class="btn btn-primary btn-sm" [routerLink]="['/empleado/editar/', empleado.id]">
+                Editar
+              </a>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>

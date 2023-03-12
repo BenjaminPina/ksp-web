@@ -37,4 +37,10 @@ export class EmpleadosService {
 
     return this.http.post(`${this.urlApi}/empleados/`, dto, { headers });
   }
+
+  obtener(id: number): Observable<any> {
+    const headers = this.cabecera();
+
+    return this.http.get(`${this.urlApi}/empleados/${id}/`, { headers });
+  }
 }

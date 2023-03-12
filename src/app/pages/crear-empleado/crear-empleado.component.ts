@@ -7,6 +7,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 
 import { EmpleadosService } from '../../services/empleados.service';
 import { EmpleadoDto } from '../../interfaces/dto/empleadoDto';
+import { Empleado } from '../../interfaces/empleado';
 
 @Component({
   selector: 'app-crear-empleado',
@@ -42,7 +43,8 @@ export class CrearEmpleadoComponent implements OnInit, OnDestroy {
           'success',
         );
         this.spinner.hide();
-        // this.router.navigate(['/editar/', 1]);
+        const empleado: Empleado = resp;
+        this.router.navigate(['/empleado/editar/', empleado.id]);
       },
       err => {
         console.log(err);
