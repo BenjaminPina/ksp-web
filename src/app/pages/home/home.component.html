@@ -38,6 +38,9 @@
               <a class="btn btn-primary btn-sm" [routerLink]="['/empleado/editar/', empleado.id]">
                 Editar
               </a>
+              <button class="btn btn-danger btn-sm" (click)="confirmDeleteEmpleado(empleado.id)">
+                Eliminar
+              </button>
             </div>
           </td>
         </tr>

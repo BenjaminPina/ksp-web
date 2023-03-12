@@ -49,4 +49,10 @@ export class EmpleadosService {
 
     return this.http.put(`${this.urlApi}/empleados/${id}/`, dto, { headers });
   }
+
+  eliminar(id: number): Observable<any> {
+    const headers = this.cabecera();
+
+    return this.http.delete(`${this.urlApi}/empleados/${id}/`, { headers });
+  }
 }

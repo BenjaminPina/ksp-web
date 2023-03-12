@@ -40,6 +40,47 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.page = page;
   }
 
+  confirmDeleteEmpleado(id: number): void {
+    swal.fire({
+      title: '¿Eliminar empleado?',
+      text: 'Confirma que deseas eliminar al empleado.',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, eliminar empleado',
+      cancelButtonText: 'No, cancelar'
+    }).then(
+      result => {
+        if (result.value) {
+          this.deleteEmpleado(id);
+        }
+      }
+    );
+  }
+
+  deleteEmpleado(id: number): void {
+    this.spinner.show();
+    const subscription = this.empleadosService.eliminar(id).subscribe(
+      _ => {
+        swal.fire(
+          'Empleado eliminado',
+          'El empleado fue eliminado correctamente',
+          'success',
+        );
+        this.spinner.hide();
+        this.getEmpleados(this.page, '');
+      },
+      err => {
+        console.log(err);
+        swal.fire(
+          'Error',
+          'Ocurrió un error al eliminar al empleado',
+          'error'
+        );
+        this.spinner.hide();
+      }
+    );
+    this.subscription.add(subscription);
+  }
+
   getEmpleados(page: number, seach: string): void {
     this.spinner.show();
     const subscription = this.empleadosService.lista(page, seach).subscribe(
