@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   pageSize = environment.pageSize;
   page: number;
+  textoBusqueda: string = '';
   subscription: Subscription = new Subscription();
   empleados: Empleados = {count: 0, next: null, previous: null, results: []};
 
@@ -29,15 +30,21 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.getEmpleados(this.page, '');
+    this.getEmpleados(this.page, this.textoBusqueda);
   }
 
   ngOnDestroy(): void {
       this.subscription.unsubscribe();
   }
 
+  buscar(): void {
+    console.log('buscar', this.page, this.textoBusqueda);
+    this.getEmpleados(this.page, this.textoBusqueda);
+  }
+
   pageChange(page: number): void {
     this.page = page;
+    this.getEmpleados(page, this.textoBusqueda);
   }
 
   confirmDeleteEmpleado(id: number): void {
@@ -66,7 +73,7 @@ export class HomeComponent implements OnInit, OnDestroy {
           'success',
         );
         this.spinner.hide();
-        this.getEmpleados(this.page, '');
+        this.getEmpleados(this.page, this.textoBusqueda);
       },
       err => {
         console.log(err);

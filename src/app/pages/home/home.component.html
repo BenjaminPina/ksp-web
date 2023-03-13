@@ -13,6 +13,16 @@
 </div>
 
 <div class="row">
+  <div class="col col-md-6">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Buscar por nombre" name="textoBusqueda" id="textoBusqueda"
+        [(ngModel)]="textoBusqueda">
+      <button class="btn btn-outline-secondary" (click)="buscar()">Buscar</button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
   <div class="col">
     <table class="table table-stripped">
       <thead>

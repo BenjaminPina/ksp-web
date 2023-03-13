@@ -25,9 +25,8 @@ export class EmpleadosService {
     const headers = this.cabecera();
     const params = new HttpParams()
       .set('page', page.toString())
-      .set('ordering', 'nombre_completo');
-
-    if (search != '') params.set('search', search);
+      .set('ordering', 'nombre_completo')
+      .set('search', search);
 
     return this.http.get(`${this.urlApi}/empleados/`, { headers, params });
   }
