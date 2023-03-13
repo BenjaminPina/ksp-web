@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { FormCrearEmpleadoComponent } from './form-crear-empleado/form-crear-empleado.component';
 import { FormsModule } from '@angular/forms';
 import { DpDatePickerModule } from 'ng2-date-picker';
+
 import { FormEditarEmpleadoComponent } from './form-editar-empleado/form-editar-empleado.component';
 
 

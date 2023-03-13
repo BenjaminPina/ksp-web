@@ -54,4 +54,8 @@ export class EmpleadosService {
 
     return this.http.delete(`${this.urlApi}/empleados/${id}/`, { headers });
   }
+
+  subirFoto(id: number, data: FormData): Observable<any> {
+    return this.http.patch(`${this.urlApi}/empleados/${id}/`, data);
+  }
 }

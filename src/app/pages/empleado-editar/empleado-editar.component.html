@@ -4,4 +4,5 @@
   </div>
 </div>
 
-<app-form-editar-empleado [dto]="dto" (submit)="onSubmit($event)"></app-form-editar-empleado>
+<app-form-editar-empleado [dto]="dto" [foto]="empleado.foto" [id]="empleado.id" (submit)="onSubmit($event)">
+</app-form-editar-empleado>
